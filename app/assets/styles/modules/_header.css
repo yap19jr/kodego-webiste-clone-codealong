@@ -1,23 +1,40 @@
 .header {
+  color: $mainBlue;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-container {
+    height: 100%;
+    margin-right: auto;
+    display: flex;
+  }
+
   &__logo {
-    transform: scale(0.65);
+    transform: scale(0.7);
+    align-items: center;
+    justify-content: left;
   }
 
   &__nav {
-    float: right;
-    color: $mainBlue;
+    display: flex;
+    justify-content: space-between;
 
-    & li {
-      display: inline-block;
-      margin-right: 1.5em;
+    & > ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & > li {
+        margin-right: 1.5em;
+      }
     }
   }
-
   &__user-links {
-    float: right;
-
-    & > a:first-of-type {
-      margin-right: 1rem;
+    & > a {
+      margin: 0 0.5em;
     }
   }
 }
