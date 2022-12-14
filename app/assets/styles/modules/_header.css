@@ -2,39 +2,46 @@
   color: $mainBlue;
 
   &__container {
-    display: flex;
-    align-items: center;
-  }
-
-  &__logo-container {
-    height: 100%;
-    margin-right: auto;
-    display: flex;
-  }
-
-  &__logo {
-    transform: scale(0.7);
-    align-items: center;
-    justify-content: left;
-  }
-
-  &__nav {
-    display: flex;
-    justify-content: space-between;
-
-    & > ul {
+    @mixin atLaptopLarge {
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+  }
 
-      & > li {
-        margin-right: 1.5em;
+  &__mobile-nav-trigger {
+    @mixin atLaptop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    @mixin atLaptopLarge {
+      transform: scale(0.7);
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @mixin atLaptopLarge {
+      display: flex;
+      justify-content: space-between;
+
+      & > ul {
+        display: flex;
+        align-items: center;
+
+        & > li {
+          margin-right: 1em;
+        }
       }
     }
   }
+
   &__user-links {
-    & > a {
-      margin: 0 0.5em;
+    @mixin atLaptopLarge {
+      width: 14rem;
     }
   }
 }
